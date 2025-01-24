@@ -26,4 +26,12 @@ class Form extends Model
     {
         return $this->hasMany(Questions::class, 'form_id');
     }
+    public function responses()
+    {
+        return $this->hasMany(Response::class, 'form_id');
+    }
+    public function answers()
+    {
+        return $this->hasManyThrough(Answer::class, Response::class, 'form_id', 'response_id');
+    }
 }
