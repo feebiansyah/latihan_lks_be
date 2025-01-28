@@ -15,7 +15,8 @@ class QuestionController extends Controller
     public function store(Request $request, $slug) {
        $validateData =  $request->validate([
             'name' => 'required|string',
-            'choice_type' => 'required|in:sort answer,paragraph,multiple choice,dropdown,checkbox',
+            'choice_type' => 'required|in:short answer,paragraph,multiple
+            choice,dropdown,checkbox,date',
             'choices' => 'nullable',
             'is_required' => 'nullable|boolean',
         ]);
